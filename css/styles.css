@@ -1,0 +1,812 @@
+/* Global Styles */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #ff6b6b;
+    --accent-color: #6bffb8;
+    --dark-color: #2d3748;
+    --light-color: #f8f9fa;
+    --gray-color: #718096;
+    --success-color: #48bb78;
+    --warning-color: #f6ad55;
+    --error-color: #f56565;
+    --tel-aviv-blue: #4a90e2;
+    --tel-aviv-sand: #e6d7b9;
+    --tel-aviv-white: #ffffff;
+    --tel-aviv-coral: #ff7e67;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--tel-aviv-blue);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--tel-aviv-coral);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.primary-btn {
+    background-color: var(--tel-aviv-blue);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #3a7bc8;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background-color: #e2e8f0;
+    color: var(--dark-color);
+}
+
+.secondary-btn:hover {
+    background-color: #cbd5e0;
+    transform: translateY(-2px);
+}
+
+.secondary-btn:disabled {
+    background-color: #e2e8f0;
+    color: #a0aec0;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Header and Navigation */
+header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    color: var(--tel-aviv-blue);
+    margin-bottom: 5px;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    color: var(--gray-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--dark-color);
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: var(--border-radius);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--tel-aviv-blue);
+    background-color: rgba(74, 144, 226, 0.1);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--dark-color);
+    transition: var(--transition);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    padding: 40px 0;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Home Tab */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/tel-aviv-skyline.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 40px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.featured-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--tel-aviv-blue);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.cta-section {
+    background-color: var(--tel-aviv-blue);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: var(--border-radius);
+}
+
+.cta-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    margin-bottom: 25px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-section .btn {
+    background-color: white;
+    color: var(--tel-aviv-blue);
+}
+
+.cta-section .btn:hover {
+    background-color: var(--tel-aviv-sand);
+}
+
+/* Attractions Tab */
+.section-intro {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--gray-color);
+    font-size: 1.1rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--tel-aviv-blue);
+    font-size: 2rem;
+}
+
+.attractions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.attraction-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.attraction-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.attraction-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.attraction-card h3 {
+    padding: 20px 20px 10px;
+    color: var(--dark-color);
+}
+
+.attraction-card p {
+    padding: 0 20px 20px;
+    color: var(--gray-color);
+}
+
+/* Food & Drink Tab */
+.food-categories {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .food-categories {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.food-category {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+}
+
+.food-category h3 {
+    color: var(--tel-aviv-blue);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.food-list li {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.food-list li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.food-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--dark-color);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.restaurant {
+    margin-bottom: 20px;
+}
+
+.restaurant h4 {
+    color: var(--dark-color);
+    margin-bottom: 5px;
+}
+
+.restaurant p {
+    color: var(--gray-color);
+}
+
+/* Transportation Tab */
+.transport-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.transport-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.transport-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.transport-icon {
+    font-size: 2.5rem;
+    color: var(--tel-aviv-blue);
+    margin-bottom: 20px;
+}
+
+.transport-card h3 {
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.transport-card p {
+    margin-bottom: 10px;
+}
+
+.transport-card p:last-child {
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+/* Price Game Tab Styles */
+.game-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .game-container {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.game-section {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-display {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product-image-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+
+#product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: var(--tel-aviv-blue);
+}
+
+.hidden {
+    display: none;
+}
+
+#product-name {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+#product-description {
+    color: var(--gray-color);
+    margin-bottom: 20px;
+}
+
+.guess-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.guess-question {
+    font-size: 1.3rem;
+    color: var(--tel-aviv-blue);
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.price-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+}
+
+.currency {
+    position: absolute;
+    left: 15px;
+    font-size: 1.2rem;
+    color: var(--gray-color);
+}
+
+#price-guess {
+    width: 100%;
+    padding: 12px 12px 12px 30px;
+    border: 2px solid #e2e8f0;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+#price-guess:focus {
+    outline: none;
+    border-color: var(--tel-aviv-blue);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.feedback {
+    padding: 15px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: 500;
+    display: none;
+}
+
+.feedback.success {
+    background-color: rgba(72, 187, 120, 0.2);
+    color: var(--success-color);
+    display: block;
+}
+
+.feedback.warning {
+    background-color: rgba(246, 173, 85, 0.2);
+    color: var(--warning-color);
+    display: block;
+}
+
+.feedback.error {
+    background-color: rgba(245, 101, 101, 0.2);
+    color: var(--error-color);
+    display: block;
+}
+
+.score-display {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: var(--border-radius);
+}
+
+.score-item {
+    text-align: center;
+}
+
+.score-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--gray-color);
+    margin-bottom: 5px;
+}
+
+.score-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--tel-aviv-blue);
+}
+
+.leaderboard-section {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+}
+
+.leaderboard-section h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--tel-aviv-blue);
+}
+
+.leaderboard-container {
+    margin-bottom: 30px;
+}
+
+.leaderboard-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.leaderboard-item:last-child {
+    border-bottom: none;
+}
+
+.leaderboard-rank {
+    font-weight: 700;
+    color: var(--tel-aviv-blue);
+    width: 30px;
+}
+
+.leaderboard-name {
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+.leaderboard-score {
+    font-weight: 600;
+}
+
+.leaderboard-loading {
+    text-align: center;
+    color: var(--gray-color);
+    padding: 20px 0;
+}
+
+.user-score-entry {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-top: 20px;
+}
+
+.user-score-entry h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+#player-name {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+#player-name:focus {
+    outline: none;
+    border-color: var(--tel-aviv-blue);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 50px 0 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 0 20px 30px;
+}
+
+.footer-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--tel-aviv-blue);
+}
+
+.footer-links h4,
+.footer-social h4 {
+    margin-bottom: 15px;
+    color: var(--tel-aviv-sand);
+}
+
+.footer-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: #cbd5e0;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #cbd5e0;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #4a5568;
+    font-size: 0.9rem;
+    color: #cbd5e0;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    text-align: center;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--gray-color);
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    color: var(--dark-color);
+}
+
+#modal-title {
+    margin-bottom: 20px;
+}
+
+#modal-message {
+    margin-bottom: 25px;
+}
+
+#modal-message p {
+    margin-bottom: 10px;
+}
+
+#modal-message ul {
+    text-align: left;
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+#modal-message li {
+    margin-bottom: 5px;
+    list-style-type: disc;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        gap: 0;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
